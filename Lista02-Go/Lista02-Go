@@ -1,1 +1,49 @@
+questao1
+
+package main
+
+import "fmt"
+
+func main() {
+    var matricula int
+    var np1, np2, np3, np4, np5, np6, np7, np8 float64
+    var nl1, nl2, nl3, nl4, nl5 float64
+    var nTF float64
+    var presenca float64
+    var nf float64
+    var mp float64
+    var ml float64
+    var p float64
+    fmt.Print("Digite a matricula do aluno:")
+    fmt.Scan(&matricula)
+    fmt.Print("Digite as 8 notas de prova separadas por um espaço:")
+    fmt.Scan(&np1, &np2, &np3, &np4, &np5, &np6, &np7, &np8)
+    fmt.Print("Digite as 5 notas de exercicio separadas por um espaço:")
+    fmt.Scan(&nl1, &nl2, &nl3, &nl4, &nl5)
+    fmt.Print("Digite a nota de trabalho final:")
+    fmt.Scan(&nTF)
+    fmt.Print("Digite a presença do aluno:")
+    fmt.Scan(&presenca)
+    
+    mp = (np1 + np2 + np3 + np4 + np5 + np6 + np7 + np8) / 8
+    ml = (nl1 + nl2 + nl3 + nl4 + nl5) / 5
+    p = presenca / 128
+    
+    nf = 0.7 * mp + 0.15 * ml + 0.15 * nTF
+    
+    switch {
+        case nf >= 6 && p >= 0.75:
+        fmt.Printf("Matricula: %d, Nota Final: %.2f, Situação Final: APROVADO", matricula, nf)
+        case nf < 6 && p >= 0.75:
+        fmt.Printf("Matricula: %d, Nota Final: %.2f, Situação Final: REPROVADO POR NOTA", matricula, nf)
+        case nf >= 6 && p <= 0.75:
+        fmt.Printf("Matricula: %d, Nota Final: %.2f, Situação Final: REPROVADO POR FREQUENCIA ", matricula, nf)
+        case nf < 6 && p < 0.75:
+        fmt.Printf("Matricula: %d, Nota Final: %.2f, Situação Final: REPROVADO POR NOTA E POR FREQUENCIA", matricula, nf)
+    }
+}
+
+
+questao 2
+
 
