@@ -1,4 +1,4 @@
-questao1
+QUESTAO 1
 
 package main
 
@@ -44,6 +44,48 @@ func main() {
 }
 
 
-questao 2
+QUESTA O9
+
+package main
+
+import "fmt"
+
+func main() {
+    var n int
+    
+    fmt.Print("Digite um numero:")
+    fmt.Scan(&n)
+    
+    switch {
+        case n < 0:
+        fmt.Print("NUMERO INVALIDO")
+        case n == 2:
+        fmt.Print("PRIMO")
+        case n == 3:
+        fmt.Print("PRIMO")
+        case (n %2 == 0) || (n %3 == 0):
+        fmt.Print("NAO PRIMO")
+        case !(n %2 == 0) || !(n %3 == 0):
+        fmt.Print("PRIMO")
+    }
+}  
+
+
+QUESTAO 13
+
+package main
+
+import "fmt"
+
+func main() {
+    var n, x int
+    
+    fmt.Println("Digite um numero inteiro:")
+    fmt.Scanln(&n)
+    
+    x = ((n * 2) * 32 + 32 * n) - n
+    
+    fmt.Print(x)
+}
 
 
