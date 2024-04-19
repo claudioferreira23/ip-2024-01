@@ -44,6 +44,55 @@ func main() {
 }
 
 
+QUESTAO 4
+
+package main
+
+import "fmt"
+
+func main() {
+    var n, i, s float64
+    
+  fmt.Println("Digite um numero qualquer de 0 a 9:")
+  fmt.Scanln(&n)
+  fmt.Println("Digite um numero qualquer de 0 a 9:")
+  fmt.Scanln(&i)
+  fmt.Println("Digite um numero qualquer de 0 a 9:")
+  fmt.Scanln(&s)
+  
+  incremento := i + (i * s)
+  
+  somai := n + incremento
+  
+  subtracaoi := n - incremento
+  
+  multiplicacaoi := n * incremento
+  
+  divisaoi := n / incremento
+  
+  soma := n + i
+  
+  subtracao := n - i
+  
+  multiplicacao := n * i
+  
+  divisao := n / i
+  
+  fmt.Println("Tabuada de soma:")
+  fmt.Printf("%.2f + %.2f = %.2f\n", n, i, soma)
+  fmt.Printf("%.2f + %.2f = %.2f\n", n, incremento, somai)
+  fmt.Println("Tabuada de subtracao:")
+  fmt.Printf("%.2f - %.2f = %.2f\n", n, i, subtracao)
+  fmt.Printf("%.2f - %.2f = %.2f\n", n, incremento, subtracaoi)
+  fmt.Println("Tabuada de multiplicacao:")
+  fmt.Printf("%.2f * %.2f = %.2f\n", n, i, multiplicacao)
+  fmt.Printf("%.2f * %.2f = %.2f\n", n, incremento, multiplicacaoi)
+  fmt.Println("Tabuada de divisao:")
+  fmt.Printf("%.2f / %.2f = %.2f\n", n, i, divisao)
+  fmt.Printf("%.2f / %.2f = %.2f\n", n, incremento, divisaoi)
+}
+
+
 QUESTAO 9
 
 package main
