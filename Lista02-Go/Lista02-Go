@@ -44,6 +44,29 @@ func main() {
 }
 
 
+QUESTAO 3
+
+package main
+
+import "fmt"
+
+func factorial(n int) int {
+	if n <= 1 {
+		return 1
+	}
+	return n * factorial(n-1)
+}
+
+func main() {
+	var n int
+	fmt.Print("Digite um número inteiro: ")
+	fmt.Scan(&n)
+
+	result := factorial(n)
+	fmt.Printf("%d! = %d\n", n, result)
+}
+
+
 QUESTAO 4
 
 package main
