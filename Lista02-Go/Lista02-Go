@@ -116,6 +116,40 @@ func main() {
 }
 
 
+QUESTAO 7
+
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    var n, npar, nimpar int
+    var somap, somai float64
+
+    for {
+        fmt.Scan(&n)
+        if n == 0 {
+            break
+        }
+        if n%2 == 0 {
+			npar++
+            somap += float64(n)
+        } else {
+            nimpar++
+            somai += float64(n)
+        }
+    }
+
+    mediaPar := somap / float64(npar)
+    mediaImpar := somai / float64(nimpar)
+
+    fmt.Printf("MEDIA PAR = %.2f\n", mediaPar)
+    fmt.Printf("MEDIA IMPAR = %.2f\n", mediaImpar)
+}
+
+
 QUESTAO 9
 
 package main
