@@ -177,6 +177,33 @@ func main() {
 }  
 
 
+QUESTAO 10
+
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    for {
+        var matricula int
+        var htrabalho int
+        var vhora float64
+
+        fmt.Scan(&matricula, &htrabalho, &vhora)
+
+        if matricula == 0 {
+            break
+        }
+
+        salario := float64(htrabalho) * vhora
+
+        fmt.Printf("%d %.2f\n", matricula, salario)
+    }
+}
+
+
 QUESTAO 13
 
 package main
