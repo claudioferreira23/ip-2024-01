@@ -235,6 +235,36 @@ func main() {
 }
 
 
+QUESTAO 8
+
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    var n int
+    fmt.Scanln(&n)
+
+    if n < 2 {
+        fmt.Println("Campeonato invalido!")
+    } else {
+        imprimirFinais(n)
+    }
+}
+
+func imprimirFinais(n int) {
+    contador := 1
+    for i := 1; i <= n; i++ {
+        for j := i + 1; j <= n; j++ {
+            fmt.Printf("Final %d: Time%d X Time%d\n", contador, i, j)
+            contador++
+        }
+    }
+}
+
+
 QUESTAO 9
 
 package main
