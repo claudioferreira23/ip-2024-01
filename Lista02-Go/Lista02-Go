@@ -159,6 +159,48 @@ func calcularCrescente(sequencia []int) int {
 }
 
 
+package main
+
+import "fmt"
+
+
+func main() {
+    var n int
+    fmt.Scanln(&n)
+
+    sequencia := make([]int, n)
+    for i := 0; i < n; i++ {
+        fmt.Scan(&sequencia[i])
+    }
+
+    maiorSubsequencia := calcularSubsequencia(sequencia)
+
+    fmt.Printf("A maior subsequência de elementos iguais possui %d elementos.\n", maiorSubsequencia)
+}
+
+func calcularSubsequencia(sequencia []int) int {
+    if len(sequencia) == 0 {
+        return 0
+    }
+
+    contadorMax := 1
+    contadorAtual := 1
+
+    for i := 1; i < len(sequencia); i++ {
+        if sequencia[i] == sequencia[i-1] {
+            contadorAtual++
+            if contadorAtual > contadorMax {
+                contadorMax = contadorAtual
+            }
+        } else {
+            contadorAtual = 1
+        }
+    }
+
+    return contadorMax
+}
+
+
 QUESTAO 7
 
 package main
