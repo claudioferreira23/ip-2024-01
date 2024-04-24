@@ -319,6 +319,31 @@ func main() {
 }
 
 
+QUESTAO 11
+
+package main
+
+import(
+	"fmt"
+	"math"
+)
+
+func main() {
+	var n, e float64
+	fmt.Scan(&n)
+	fmt.Scan(&e)
+
+	r0 := 1.0
+	erro := math.Abs(n - r0*r0)
+
+	for erro > e {
+		r0 = (r0 + n/r0) / 2
+		erro = math.Abs(n - r0*r0)
+		fmt.Printf("r: %.9f, erro: %.9f\n", r0, erro)
+	}
+}
+
+
 QUESTAO 13
 
 package main
