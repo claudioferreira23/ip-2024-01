@@ -116,6 +116,49 @@ func main() {
 }
 
 
+QUESTAO 5
+
+package main
+
+import "fmt"
+
+func main() {
+    var n int
+    fmt.Scanln(&n)
+
+    sequencia := make([]int, n)
+    for i := 0; i < n; i++ {
+        fmt.Scan(&sequencia[i])
+    }
+
+    comprimento := calcularCrescente(sequencia)
+    
+    fmt.Printf("O comprimento do segmento crescente maximo e: %d\n", comprimento)
+}
+
+func calcularCrescente(sequencia []int) int {
+    if len(sequencia) == 0 {
+        return 0
+    }
+
+    compriMax := 1
+    compriAtual := 1
+
+    for i := 1; i < len(sequencia); i++ {
+        if sequencia[i] > sequencia[i-1] {
+            compriAtual++
+            if compriAtual > compriMax {
+                compriMax = compriAtual
+            }
+        } else {
+            compriAtual = 1
+        }
+    }
+
+    return compriMax - 1
+}
+
+
 QUESTAO 7
 
 package main
