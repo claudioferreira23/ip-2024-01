@@ -626,4 +626,46 @@ func main() {
 }
 
 
-QUESTAO 
+QUESTAO 26
+
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func fatorial(n int) float64 {
+	if n <= 1 {
+		return 1
+	}
+	return float64(n) * fatorial(n-1)
+}
+
+func seno(x float64, N int) float64 {
+	resultado := 0.0
+
+	for n := 0; n <= N; n++ {
+		termo := math.Pow(-1, float64(n)) * math.Pow(x, float64(2*n+1)) / fatorial(2*n+1)
+		resultado += termo
+	}
+
+	return resultado
+}
+
+func main() {
+	var x float64
+	var N int
+
+	fmt.Println("Digite o ângulo em radianos e a quantidade de termos:")
+	fmt.Scan(&x, &N)
+
+	senX := seno(x, N)
+
+	fmt.Printf("seno(%.2f) = %.6f\n", x, senX)
+}
+
+
+QUESTAO 27
+
+
