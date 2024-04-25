@@ -482,4 +482,59 @@ func main() {
 }
 
 
-QUESTAO
+QUESTAO 23
+
+package main
+
+import "fmt"
+
+func somadivisores(n int) int {
+	soma := 1 
+
+	for i := 2; i*i <= n; i++ {
+		if n%i == 0 {
+	soma += i
+			if n/i != i {
+				soma += n / i
+			}
+		}
+	}
+
+	return soma
+}
+
+func encontreparesamigos(n int) [][]int {
+	pares := make([][]int, 0)
+	verificados := make(map[int]bool)
+
+	for i := 2; len(pares) < n; i++ {
+		if verificados[i] || i == somadivisores(i) || i < somadivisores(i) {
+			continue
+		}
+
+		soma := somadivisores(i)
+		if i == somadivisores(soma) {
+			pares = append(pares, []int{i, soma})
+			verificados[i] = true
+			verificados[soma] = true
+		}
+	}
+
+	return pares
+}
+
+func main() {
+	var n int
+	fmt.Println("Digite um número inteiro positivo:")
+	fmt.Scan(&n)
+
+	pares := encontreparesamigos(n)
+
+	fmt.Println("Os pares de números amigos são:")
+	for _, par := range pares {
+		fmt.Printf("(%d,%d)\n", par[1], par[0])
+	}
+}
+
+
+QUESTAO 
