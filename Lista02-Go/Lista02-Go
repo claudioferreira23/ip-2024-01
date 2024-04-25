@@ -452,4 +452,34 @@ func main() {
 }
 
 
-QUESTAO 
+QUESTAO 20
+
+package main
+
+import "fmt"
+
+func main() {
+    var n, soma int
+    fmt.Println("Digite um número inteiro maior que 1:")
+    fmt.Scan(&n)
+
+    fmt.Printf("%d = ", n)
+    for i := 1; i < n; i++ {
+        if n%i == 0 {
+            if soma > 0 {
+                fmt.Print(" + ")
+            }
+            fmt.Print(i)
+            soma += i
+        }
+    }
+
+    if soma == n {
+        fmt.Printf(" = %d (NUMERO PERFEITO)\n", n)
+    } else {
+        fmt.Printf(" = %d (NUMERO NAO E PERFEITO)\n", soma)
+    }
+}
+
+
+QUESTAO
