@@ -44,6 +44,32 @@ func main() {
 }
 
 
+QUESTAO 2
+
+package main
+
+import "fmt"
+
+func main() {
+    var pA, pB int
+    fmt.Scanln(&pA)
+    fmt.Scanln(&pB)
+
+    anos := calcularAnos(pA, pB)
+    fmt.Printf("ANOS = %d\n", anos)
+}
+
+func calcularAnos(pA, pB int) int {
+    anos := 0
+    for pA <= pB {
+        pA = pA + (pA * 3 / 100)
+        pB = pB + (pB * 15 / 1000)
+        anos++
+    }
+    return anos
+}
+
+
 QUESTAO 3
 
 package main
