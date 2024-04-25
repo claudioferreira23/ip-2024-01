@@ -159,6 +159,8 @@ func calcularCrescente(sequencia []int) int {
 }
 
 
+QUESTAO 6
+
 package main
 
 import "fmt"
