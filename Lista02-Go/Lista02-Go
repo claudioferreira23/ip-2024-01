@@ -534,6 +534,40 @@ func main() {
 }
 
 
+QUESTAO 21
+
+package main
+
+import "fmt"
+
+
+func main() {
+	var n int
+	for {
+		fmt.Scan(&n)
+		if n == 0 {
+			break
+		}
+		seq := make([]float64, n)
+		for i := 0; i < n; i++ {
+			fmt.Scan(&seq[i])
+		}
+		ordenado := true
+		for i := 1; i < n; i++ {
+			if seq[i-1] >= seq[i] {
+				ordenado = false
+				break
+			}
+		}
+		if ordenado {
+			fmt.Println("ORDENADA")
+		} else {
+			fmt.Println("DESORDENADA")
+		}
+	}
+}
+
+
 QUESTAO 23
 
 package main
