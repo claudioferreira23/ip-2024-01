@@ -390,6 +390,30 @@ func main() {
 }
 
 
+QUESTAO 14
+
+package main
+
+import "fmt"
+
+func main() {
+	var m, n int
+
+	fmt.Scan(&m, &n)
+
+	for i := 2; i <= m; i++ {
+		for j := 1; j <= n && j < i; j++ {
+			fmt.Printf("(%d,%d)", i, j)
+
+			if j < i-1 {
+				fmt.Print("-")
+			}
+		}
+		fmt.Println()
+	}
+}
+
+
 QUESTAO 15
 
 package main
