@@ -579,4 +579,51 @@ func main() {
 }
 
 
+QUESTAO 25
+
+package main
+
+import "fmt"
+
+func fatorial(n int) float64 {
+	if n <= 1 {
+		return 1
+	}
+	return float64(n) * fatorial(n-1)
+}
+
+func exponencial(x float64, N int) float64 {
+	resultado := 1.0
+
+	for n := 1; n <= N; n++ {
+		termo := (power(x, n) / fatorial(n))
+		resultado += termo
+	}
+
+	return resultado
+}
+
+func power(x float64, n int) float64 {
+	result := 1.0
+
+	for i := 1; i <= n; i++ {
+		result *= x
+	}
+
+	return result
+}
+
+func main() {
+	var x float64
+	var N int
+
+	fmt.Println("Digite o expoente e a quantidade de termos:")
+	fmt.Scan(&x, &N)
+
+	ex := exponencial(x, N)
+
+	fmt.Printf("e^%.2f = %.6f\n", x, ex)
+}
+
+
 QUESTAO 
