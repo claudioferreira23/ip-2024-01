@@ -424,4 +424,32 @@ func main() {
 }
 
 
-QUESTAO
+QUESTAO 19
+
+package main
+
+import "fmt"
+
+func main() {
+	var m int
+	fmt.Println("Digite um número inteiro maior que zero:")
+	fmt.Scan(&m)
+
+	for n := 1; n <= m; n++ {
+		fmt.Printf("%d*%d*%d = ", n, n, n)
+
+		primeiroImpar := (n - 1) * n + 1
+
+		for i := 0; i < n; i++ {
+			if i > 0 {
+				fmt.Print("+")
+			}
+			fmt.Print(primeiroImpar + 2*i)
+		}
+
+		fmt.Println()
+	}
+}
+
+
+QUESTAO 
