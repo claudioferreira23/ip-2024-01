@@ -668,4 +668,37 @@ func main() {
 
 QUESTAO 27
 
+package main
 
+import "fmt"
+
+func main() {
+	for {
+		var n int
+		fmt.Scanln(&n)
+
+		if n <= 1 {
+			fmt.Printf("Fatoracao nao e possivel para o numero %d!\n", n)
+			continue
+		}
+
+		fmt.Printf("%d = ", n)
+		fatoracaoPrimos(n)
+		fmt.Println()
+	}
+}
+
+func fatoracaoPrimos(n int) {
+	divisor := 2
+	for n > 1 {
+		if n%divisor == 0 {
+			fmt.Printf("%d", divisor)
+			n /= divisor
+			if n > 1 {
+				fmt.Printf(" x ")
+			}
+		} else {
+			divisor++
+		}
+	}
+}
