@@ -537,4 +537,46 @@ func main() {
 }
 
 
+QUESTAO 24
+
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func fatorial(n int) float64 {
+	if n <= 1 {
+		return 1
+	}
+	return float64(n) * fatorial(n-1)
+}
+
+func cosseno(x float64, N int) float64 {
+	resultado := 1.0
+	sinal := -1.0
+
+	for n := 1; n <= N; n++ {
+		termo := math.Pow(x, float64(2*n)) / fatorial(2*n)
+		resultado += sinal * termo
+		sinal *= -1.0
+	}
+
+	return resultado
+}
+
+func main() {
+	var x float64
+	var N int
+
+	fmt.Println("Digite o ângulo em radianos e a quantidade de termos:")
+	fmt.Scan(&x, &N)
+
+	cosX := cosseno(x, N)
+
+	fmt.Printf("cos(%.2f) = %.6f\n", x, cosX)
+}
+
+
 QUESTAO 
