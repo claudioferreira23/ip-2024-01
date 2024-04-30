@@ -5,42 +5,41 @@ package main
 import "fmt"
 
 func main() {
-    var matricula int
-    var np1, np2, np3, np4, np5, np6, np7, np8 float64
-    var nl1, nl2, nl3, nl4, nl5 float64
-    var nTF float64
-    var presenca float64
-    var nf float64
-    var mp float64
-    var ml float64
-    var p float64
-    fmt.Print("Digite a matricula do aluno:")
-    fmt.Scan(&matricula)
-    fmt.Print("Digite as 8 notas de prova separadas por um espaço:")
-    fmt.Scan(&np1, &np2, &np3, &np4, &np5, &np6, &np7, &np8)
-    fmt.Print("Digite as 5 notas de exercicio separadas por um espaço:")
-    fmt.Scan(&nl1, &nl2, &nl3, &nl4, &nl5)
-    fmt.Print("Digite a nota de trabalho final:")
-    fmt.Scan(&nTF)
-    fmt.Print("Digite a presença do aluno:")
-    fmt.Scan(&presenca)
-    
-    mp = (np1 + np2 + np3 + np4 + np5 + np6 + np7 + np8) / 8
-    ml = (nl1 + nl2 + nl3 + nl4 + nl5) / 5
-    p = presenca / 128
-    
-    nf = 0.7 * mp + 0.15 * ml + 0.15 * nTF
-    
-    switch {
-        case nf >= 6 && p >= 0.75:
-        fmt.Printf("Matricula: %d, Nota Final: %.2f, Situação Final: APROVADO", matricula, nf)
-        case nf < 6 && p >= 0.75:
-        fmt.Printf("Matricula: %d, Nota Final: %.2f, Situação Final: REPROVADO POR NOTA", matricula, nf)
-        case nf >= 6 && p <= 0.75:
-        fmt.Printf("Matricula: %d, Nota Final: %.2f, Situação Final: REPROVADO POR FREQUENCIA ", matricula, nf)
-        case nf < 6 && p < 0.75:
-        fmt.Printf("Matricula: %d, Nota Final: %.2f, Situação Final: REPROVADO POR NOTA E POR FREQUENCIA", matricula, nf)
-    }
+
+	var pv int = 8
+	var l int = 5
+	var sp, sl, np, nl, mp, ml, nt float64
+	var matricula, p int
+
+	for i := 1; i <= pv; i++{
+		fmt.Scan(&np)
+		sp += np
+	}
+	for i := 1; i <= l; i++{
+		fmt.Scan(&nl)
+		sl += nl
+	}
+
+	fmt.Scan(&nt)
+
+	mp = sp / 8
+	ml = sl / 5
+	nf := 0.7 * mp + 0.15 * ml + 0.15 * nt
+
+	fmt.Scan(&p)
+
+	ps := 75 / 100 * 128
+	
+	switch{
+	case nf >= 6 && p >= ps:
+		fmt.Printf("Matricula: %d, Nota Final: %.2f, Situacao Final: APROVADO", matricula, nf)
+	case nf >= 6 && p < ps:
+		fmt.Printf("Matricula: %d, Nota Final: %.2f, Situacao Final: REPROVADO POR FREQUENCIA", matricula, nf)
+	case nf < 6 && p >= ps:
+		fmt.Printf("Matricula: %d, Nota Final: %.2f, Situacao Final: REPROVADO POR NOTA,", matricula, nf)
+	case nf < 6 && p < ps:
+		fmt.Printf("Matricula: %d, Nota Final: %.2f, Situacao Final: REPROVADO POR NOTA E POR FREQUENCIA", matricula, nf)
+	}
 }
 
 
@@ -76,22 +75,19 @@ package main
 
 import "fmt"
 
-func factorial(n int) int {
-	if n <= 1 {
-		return 1
-	}
-	return n * factorial(n-1)
-}
-
 func main() {
+
 	var n int
-	fmt.Print("Digite um número inteiro: ")
+
 	fmt.Scan(&n)
 
-	result := factorial(n)
-	fmt.Printf("%d! = %d\n", n, result)
-}
+	fatorial := 1
 
+	for i := 2; i <= n; i++{
+		fatorial *= i
+	}
+	fmt.Printf("%d! = %d", n, fatorial)
+}
 
 QUESTAO 4
 
@@ -100,45 +96,43 @@ package main
 import "fmt"
 
 func main() {
-    var n, i, s float64
-    
-  fmt.Println("Digite um numero qualquer de 0 a 9:")
-  fmt.Scanln(&n)
-  fmt.Println("Digite um numero qualquer de 0 a 9:")
-  fmt.Scanln(&i)
-  fmt.Println("Digite um numero qualquer de 0 a 9:")
-  fmt.Scanln(&s)
-  
-  incremento := i + (i * s)
-  
-  somai := n + incremento
-  
-  subtracaoi := n - incremento
-  
-  multiplicacaoi := n * incremento
-  
-  divisaoi := n / incremento
-  
-  soma := n + i
-  
-  subtracao := n - i
-  
-  multiplicacao := n * i
-  
-  divisao := n / i
-  
-  fmt.Println("Tabuada de soma:")
-  fmt.Printf("%.2f + %.2f = %.2f\n", n, i, soma)
-  fmt.Printf("%.2f + %.2f = %.2f\n", n, incremento, somai)
-  fmt.Println("Tabuada de subtracao:")
-  fmt.Printf("%.2f - %.2f = %.2f\n", n, i, subtracao)
-  fmt.Printf("%.2f - %.2f = %.2f\n", n, incremento, subtracaoi)
-  fmt.Println("Tabuada de multiplicacao:")
-  fmt.Printf("%.2f * %.2f = %.2f\n", n, i, multiplicacao)
-  fmt.Printf("%.2f * %.2f = %.2f\n", n, incremento, multiplicacaoi)
-  fmt.Println("Tabuada de divisao:")
-  fmt.Printf("%.2f / %.2f = %.2f\n", n, i, divisao)
-  fmt.Printf("%.2f / %.2f = %.2f\n", n, incremento, divisaoi)
+
+	var n, y, k int
+	var s, inc, soma, sub, mut, div float64
+
+	fmt.Scan(&n, &y, &k, &s)
+
+	fmt.Print("Tabuada de soma:\n")
+	inc = float64(y) - s
+	for i := 1; i <= k; i++{
+		inc += s
+		soma = float64(n) + inc
+		fmt.Printf("%.2f + %.2f = %.2f\n", float64(n), inc, soma)
+	}
+
+	fmt.Print("Tabuada de subtracao:\n")
+	inc = float64(y) - s
+ 	for i := 1; i <= k; i++{
+		inc += s
+		sub = float64(n) - inc
+		fmt.Printf("%.2f - %.2f = %.2f\n", float64(n), inc, sub)
+	}
+
+	fmt.Print("Tabuada de multiplicacao:\n")
+	inc = float64(y) - s
+ 	for i := 1; i <= k; i++{
+		inc += s
+		mut = float64(n) * inc
+		fmt.Printf("%.2f * %.2f = %.2f\n", float64(n), inc, mut)
+	}
+
+	fmt.Print("Tabuada de divisao:\n")
+	inc = float64(y) - s
+ 	for i := 1; i <= k; i++{
+		inc += s
+		div = float64(n) / inc
+		fmt.Printf("%.2f / %.2f = %.2f\n", float64(n), inc, div)
+	}
 }
 
 
