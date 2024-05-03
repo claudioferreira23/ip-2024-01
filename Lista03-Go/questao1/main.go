@@ -26,7 +26,7 @@ func main() {
 	var encontrado bool
 
 	for _, v := range x{
-		if v == y[i]{
+		if y[i] == v{
 			encontrado = true
 		}
 		}
