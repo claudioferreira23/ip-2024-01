@@ -1,29 +1,41 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+	"strings"
+)
 
-func main(){
-
+func main() {
+	var entrada string
+	var N int
 	for {
-		var n int
-		fmt.Scan(&n)
-
-		if n == 0{
+		n, _ := fmt.Scanln(&N)
+		if n == 0 || N == 0 {
 			break
 		}
-
-		x := make([]int, n)
-
-		for i := 0; i < n; i++{
-			fmt.Scan(&x[i])
+		var x []int
+		for i := 0; i < N; i++ {
+			var num int
+			fmt.Scan(&num)
+			x = append(x, num)
 		}
-		
-		var y []int
-		for i, v := range x{
-			if v <= i{
-				y = append(y, v)
+		M := x[0]
+		for _, num := range x {
+			if num > M {
+				M = num
 			}
-			fmt.Printf("(%d) %d\n", i, len(y))
+		}
+		sort.Ints(x)
+		freq := make([]int, M+1)
+		for _, num := range x {
+			freq[num]++
+		}
+		contar := 0
+		for i := 0; i <= M; i++ {
+			contar += freq[i]
+			entrada += fmt.Sprintf("(%d) %d\n", i, contar)
 		}
 	}
+	fmt.Print(strings.TrimSpace(entrada))
 }
