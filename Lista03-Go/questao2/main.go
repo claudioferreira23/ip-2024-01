@@ -4,14 +4,14 @@ import "fmt"
 
 func main() {
 
-	var n float64
+	var n int
 	var k int
 
 	fmt.Scan(&n)
 
-	x := make([]int, int(n), 1000)
+	x := make([]int, n, 1000)
 
-	for i := 0; i < int(n); i++{
+	for i := 0; i < n; i++{
 		fmt.Scan(&x[i])
 	}
 
