@@ -9,10 +9,6 @@ func main() {
 
 	fmt.Scan(&n)
 
-	for n < 1{
-		fmt.Scan(&n)
-	}
-
 	x := make([]int, int(n), 1000)
 
 	for i := 0; i < int(n); i++{
