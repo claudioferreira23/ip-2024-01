@@ -10,7 +10,7 @@ func main() {
 
 	fmt.Scan(&n)
 
-	x := make([]int, n, n)
+	x := make([]int, n, 4999)
 
 	for i := 0; i < n; i++{
 		fmt.Scan(&x[i])

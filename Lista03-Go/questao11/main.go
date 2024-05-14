@@ -23,7 +23,7 @@ func main() {
 
 	fmt.Print("\n")
 
-	m := -1
+	m := 0
 
 	for i := 0; i < n; i++{
 		if x[i] > m{

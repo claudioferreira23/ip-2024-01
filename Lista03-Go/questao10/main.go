@@ -26,8 +26,8 @@ func main() {
 	}
 	fmt.Printf("Nota %d, %d vezes\n", un, len(y))
 
-	mn := -1
-	ind := -1
+	mn := 0
+	ind := 0
 	for i := 0; i < n; i++{
 		if x[i] > mn {
 			mn = x[i]

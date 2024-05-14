@@ -5,8 +5,8 @@ import (
 	"math"
 )
 
-func distancia(x1, y1, z1, x2, y2, z2 float64) float64 {
-	return math.Sqrt(math.Pow(x1-x2, 2) + math.Pow(y1-y2, 2) + math.Pow(z1-z2, 2))
+func distancia(ax, ay, az, bx, by, bz float64) float64 {
+	return math.Sqrt(math.Pow(ax-bx, 2) + math.Pow(ay-by, 2) + math.Pow(az-bz, 2))
 }
 
 func main() {

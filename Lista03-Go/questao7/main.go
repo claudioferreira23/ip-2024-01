@@ -3,19 +3,18 @@ package main
 import (
 	"fmt"
 	"sort"
-	"strings"
 )
 
 func main() {
-	var entrada string
-	var N int
+	var saida string
+	var n int
 	for {
-		n, _ := fmt.Scanln(&N)
-		if n == 0 || N == 0 {
+		fmt.Scanln(&n)
+		if n == 0 {
 			break
 		}
 		var x []int
-		for i := 0; i < N; i++ {
+		for i := 0; i < n; i++ {
 			var num int
 			fmt.Scan(&num)
 			x = append(x, num)
@@ -34,8 +33,8 @@ func main() {
 		contar := 0
 		for i := 0; i <= M; i++ {
 			contar += freq[i]
-			entrada += fmt.Sprintf("(%d) %d\n", i, contar)
+			saida += fmt.Sprintf("(%d) %d\n", i, contar)
 		}
 	}
-	fmt.Print(strings.TrimSpace(entrada))
+	fmt.Print(saida)
 }

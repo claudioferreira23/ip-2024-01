@@ -22,7 +22,7 @@ func main() {
 		contar[num]++
 	}
 
-	y := make([]int, 0)
+	var y []int
 
 	for _, v := range contar{
 		if v == 1{

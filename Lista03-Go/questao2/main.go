@@ -7,8 +7,13 @@ func main() {
 	var n float64
 	var k int
 
-	fmt.Scan(&n)
-
+		for {
+			fmt.Scan(&n)
+			if n > 0{
+				break
+			}
+		}
+	
 	x := make([]int, int(n), 1000)
 
 	for i := 0; i < int(n); i++{
